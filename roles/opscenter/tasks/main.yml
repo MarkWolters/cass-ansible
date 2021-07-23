@@ -1,0 +1,17 @@
+
+
+- name: Installing Opscenter
+  apt: pkg=opscenter state=latest update_cache=yes cache_valid_time=3600
+
+- name: Configuring Opscenter
+  template: src=opscenterd.conf.j2  dest=/etc/opscenter/opscenterd.conf
+  notify:
+    - restart opscenter
+
+- name: create directories
+  file: path=/etc/opscenter/clusters state=directory owner=opscenter group=opscenter
+
+- name: Configuring Cluster
+  template: src=cluster.conf.j2  dest=/etc/opscenter/clusters/Cluster.conf owner=opscenter group=opscenter
+  notify:
+    - restart opscenter

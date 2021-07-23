@@ -1,0 +1,8 @@
+
+[opscenter]
+Localhost
+
+[seeds]
+Localhost dc=DC1
+
+[non_seeds]
