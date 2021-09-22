@@ -1,0 +1,7 @@
+# This playbook runs a series of checks to verify cluster configuration
+# Configure basics
+- hosts: all
+  remote_user: ubuntu
+  become: true
+  roles:
+  - system-check
