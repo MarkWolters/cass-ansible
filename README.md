@@ -62,3 +62,12 @@ opscenter:
   authentication: true
 ````
 
+###  Precheck
+This playbook will go to each host in the inventory and run the DataStax preflight_check tool. Results will be stored in a log file specified in configuration. See https://docs.datastax.com/en/dse/6.8/dse-dev/datastax_enterprise/tools/dsePreFlight.html for details on this tool. The location of the executable, location of log file and arguments to the command are configurable.
+
+````
+pfc_dir: /usr/share/dse/tools/pfc
+pfc_args: 
+pfc_log: /usr/share/dse/tools/pfc/log.txt
+````
+
