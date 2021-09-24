@@ -53,3 +53,8 @@ cassandra:
 # Opscenter
 opscenter:
   authentication: true
+
+#preflight_check - see https://docs.datastax.com/en/dse/6.8/dse-dev/datastax_enterprise/tools/dsePreFlight.html
+pfc_dir: /usr/share/dse/tools/pfc
+pfc_args: 
+pfc_log: /usr/share/dse/tools/pfc/log.txt
