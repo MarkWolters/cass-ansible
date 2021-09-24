@@ -1,0 +1,10 @@
+- name: This command will change the working directory to {{pfc_dir}} and will execute the preflight_check with args {{pfc_args}} and store the results in {{pfc_log}}
+  shell: './preflight_check "{{pfc_args}}"'
+  register: pfc_output
+  args:
+    chdir: "{{pfc_dir}}"
+
+- name: write output to file
+  copy: 
+    dest: "{{pfc_log}}"
+    content: "{{pfc_output}}"
